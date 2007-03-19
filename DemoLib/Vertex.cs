@@ -67,7 +67,7 @@ namespace DemoLib {
 			if (length < 0 || length > 4)
 				throw new ArgumentOutOfRangeException ();
 			
-			length = new float[4];
+			v = new float[4];
 			Array.Copy (vector, v, length);
 			
 			while (length < 3)
