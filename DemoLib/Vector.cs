@@ -22,8 +22,8 @@ using System.Text;
 namespace DemoLib {
 	public class Vector : ICloneable {
 #region Special Vectors
-		public static readonly Vector Backward = new Vector (0.0f, 0.0f, -1.0f);
-		public static readonly Vector Forward = new Vector (0.0f, 0.0f, 1.0f);
+		public static readonly Vector Backward = new Vector (0.0f, 0.0f, 1.0f);
+		public static readonly Vector Forward = new Vector (0.0f, 0.0f, -1.0f);
 		public static readonly Vector Right = new Vector (1.0f, 0.0f, 0.0f);
 		public static readonly Vector Left = new Vector (-1.0f, 0.0f, 0.0f);
 		public static readonly Vector Down = new Vector (0.0f, -1.0f, 0.0f);

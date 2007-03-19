@@ -22,6 +22,7 @@ using System.Text;
 namespace DemoLib {
 	public class Vertex : ICloneable {
 		public static readonly Vertex Origin = new Vertex (0.0f, 0.0f, 0.0f);
+		
 		public float[] v;
 		
 		// Constructors
