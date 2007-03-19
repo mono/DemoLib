@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <widget class="Gtk.Dialog" id="DemoLib.ScreenResolution" design-size="375 276">
+    <property name="MemberName" />
+    <property name="Events">ButtonPressMask</property>
+    <property name="Title" translatable="yes">Settings</property>
+    <property name="Icon">stock:stock_3d-colors Menu</property>
+    <property name="Buttons">2</property>
+    <property name="HelpButton">False</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog_VBox">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+        <property name="BorderWidth">2</property>
+        <child>
+          <widget class="Gtk.VBox" id="vbox">
+            <property name="MemberName" />
+            <child>
+              <widget class="Gtk.Image" id="image">
+                <property name="MemberName" />
+                <property name="Pixbuf">stock:stock_3d-colors Dialog</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.HBox" id="hbox">
+                <property name="MemberName" />
+                <child>
+                  <widget class="Gtk.Frame" id="frame_resolution">
+                    <property name="MemberName" />
+                    <property name="LabelXalign">0</property>
+                    <property name="BorderWidth">6</property>
+                    <child>
+                      <widget class="Gtk.Alignment" id="GtkAlignment1">
+                        <property name="MemberName" />
+                        <property name="Xalign">0</property>
+                        <property name="Yalign">0</property>
+                        <property name="LeftPadding">12</property>
+                        <child>
+                          <widget class="Gtk.Table" id="table_resolution">
+                            <property name="MemberName" />
+                            <property name="NRows">4</property>
+                            <property name="NColumns">2</property>
+                            <property name="RowSpacing">6</property>
+                            <property name="ColumnSpacing">6</property>
+                            <property name="BorderWidth">6</property>
+                            <child>
+                              <widget class="Gtk.CheckButton" id="checkbox_fullscreen">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">Fullscreen</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">3</property>
+                                <property name="BottomAttach">4</property>
+                                <property name="RightAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_1024x768">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">1024 x 768</property>
+                                <property name="Active">True</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_resolution</property>
+                              </widget>
+                              <packing>
+                                <property name="LeftAttach">1</property>
+                                <property name="RightAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_1280x1024">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">1280 x 1024</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_resolution</property>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">1</property>
+                                <property name="BottomAttach">2</property>
+                                <property name="LeftAttach">1</property>
+                                <property name="RightAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_1400x1280">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">1400 x 1280</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_resolution</property>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">2</property>
+                                <property name="BottomAttach">3</property>
+                                <property name="LeftAttach">1</property>
+                                <property name="RightAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_320x240">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">320 x 240</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_resolution</property>
+                              </widget>
+                              <packing>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_640x480">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">640 x 480</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_resolution</property>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">1</property>
+                                <property name="BottomAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_800x600">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">800 x 600</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_resolution</property>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">2</property>
+                                <property name="BottomAttach">3</property>
+                                <property name="AutoSize">True</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label_resolution">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">&lt;b&gt;Screen Resolution&lt;/b&gt;</property>
+                        <property name="UseMarkup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Frame" id="frame_colour_quality">
+                    <property name="MemberName" />
+                    <property name="LabelXalign">0</property>
+                    <property name="BorderWidth">6</property>
+                    <child>
+                      <widget class="Gtk.Alignment" id="GtkAlignment2">
+                        <property name="MemberName" />
+                        <property name="Xalign">0</property>
+                        <property name="Yalign">0</property>
+                        <property name="LeftPadding">12</property>
+                        <child>
+                          <widget class="Gtk.Table" id="table_colour_quality">
+                            <property name="MemberName" />
+                            <property name="NRows">2</property>
+                            <property name="NColumns">1</property>
+                            <property name="RowSpacing">6</property>
+                            <property name="ColumnSpacing">6</property>
+                            <property name="BorderWidth">6</property>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_16bit">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">16 bit</property>
+                                <property name="Active">True</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_colour</property>
+                              </widget>
+                              <packing>
+                                <property name="AutoSize">False</property>
+                                <property name="XOptions">Fill</property>
+                                <property name="YOptions">0</property>
+                                <property name="XExpand">False</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">False</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.RadioButton" id="radio_32bit">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Label" translatable="yes">32 bit</property>
+                                <property name="DrawIndicator">True</property>
+                                <property name="HasLabel">True</property>
+                                <property name="UseUnderline">True</property>
+                                <property name="Group">group_colour</property>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">1</property>
+                                <property name="BottomAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="XOptions">Fill</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">False</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label_colours">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">&lt;b&gt;Colour Quality&lt;/b&gt;</property>
+                        <property name="UseMarkup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">False</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="DemoLib.ScreenResolution_ActionArea">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+        <property name="Spacing">6</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">2</property>
+        <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="button_play">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">_Play</property>
+            <property name="UseUnderline">True</property>
+            <property name="IsDialogButton">True</property>
+            <property name="ResponseId">-5</property>
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button_exit">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-quit</property>
+            <property name="IsDialogButton">True</property>
+            <property name="ResponseId">0</property>
+            <property name="label">gtk-quit</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
