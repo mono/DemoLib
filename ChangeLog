@@ -1,5 +1,11 @@
 2007-03-19  Jeffrey Stedfast <fejj@gnome.org>
 
+	* DemoLib/Vertex.cs: Added 2 more constructors based on float arrays.
+	(Set): New convenience methods to set x, y, z, and w
+
+	* DemoLib/Vector.cs: Added 2 more constructors based on float arrays.
+	(Set): New convenience methods to set x, y, z, and w
+
 	* DemoLib/FloatingCageScene.cs: Updated to use Vertex and Vector
 	classes
 

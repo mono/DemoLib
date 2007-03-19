@@ -58,6 +58,33 @@ namespace DemoLib {
 			v[3] = w;
 		}
 		
+		public Vector (float[] vector) {
+			int n = Math.Min (vector.Length, 4);
+			
+			v = new float[4];
+			Array.Copy (vector, v, n);
+			
+			while (n < 3)
+				v[n++] = 0.0f;
+			
+			if (n < 4)
+				v[n] = 1.0f;
+		}
+		
+		public Vector (float[] vector, int length) {
+			if (length < 0 || length > 4)
+				throw new ArgumentOutOfRangeException ();
+			
+			v = new float[4];
+			Array.Copy (vector, v, length);
+			
+			while (length < 3)
+				v[length++] = 0.0f;
+			
+			if (length < 4)
+				v[length] = 1.0f;
+		}
+		
 		// Properties
 		public float x {
 			get { return v[0]; }
@@ -131,6 +158,41 @@ namespace DemoLib {
 		
 		public object Clone () {
 			return new Vector (x, y, z, w);
+		}
+		
+		public void Set (float x) {
+			v[0] = x;
+		}
+		
+		public void Set (float x, float y) {
+			v[0] = x;
+			v[1] = y;
+		}
+		
+		public void Set (float x, float y, float z) {
+			v[0] = x;
+			v[1] = y;
+			v[2] = z;
+		}
+		
+		public void Set (float x, float y, float z, float w) {
+			v[0] = x;
+			v[1] = y;
+			v[2] = z;
+			v[3] = w;
+		}
+		
+		public void Set (float[] vector) {
+			int n = Math.Min (vector.Length, 4);
+			
+			Array.Copy (vector, v, n);
+		}
+		
+		public void Set (float[] vector, int length) {
+			if (length < 0 || length > 4)
+				throw new ArgumentOutOfRangeException ();
+			
+			Array.Copy (vector, v, length);
 		}
 		
 		// Normalize this Vector
