@@ -1,0 +1,10 @@
+2007-03-18  Jeffrey Stedfast <fejj@gnome.org>
+
+	* DemoLib/Vector.cs: Added more special vectors
+	(x2y2z2): Renamed to LengthSquared
+	(Cross): Fixed a 3am typo that caused the cross-product methods to
+	be broken
+	(Angle): Added a static version of this method
+	(Normal): Return this if the length is 1
+	(Normalize): No-op if the length is 1
+

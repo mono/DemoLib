@@ -64,6 +64,8 @@ namespace DemoLib {
             this.Name = "DemoLib.ScreenResolution";
             this.Title = Mono.Unix.Catalog.GetString("Settings");
             this.Icon = Gtk.IconTheme.Default.LoadIcon("stock_3d-colors", 16, 0);
+            this.WindowPosition = ((Gtk.WindowPosition)(4));
+            this.HasSeparator = false;
             // Internal child DemoLib.ScreenResolution.VBox
             Gtk.VBox w1 = this.VBox;
             w1.Events = ((Gdk.EventMask)(256));
