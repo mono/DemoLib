@@ -23,17 +23,9 @@ using Tao.FreeGlut;
 
 namespace DemoLib {
 	public class FloatingCageScene : Scene {
-		static float CAMERA_ZOOM_SPEED_X = 0.0f;
-		static float CAMERA_ZOOM_SPEED_Y = 0.0f;
-		static float CAMERA_ZOOM_SPEED_Z = -0.08f;
-		
-		static float INNER_ROT_X = 0.7f;
-		static float INNER_ROT_Y = 0.8f;
-		static float INNER_ROT_Z = 0.9f;
-		
-		static float OUTER_ROT_X = -0.7f;
-		static float OUTER_ROT_Y = -0.8f;
-		static float OUTER_ROT_Z = -0.9f;
+		static Vector CameraZoom = new Vector (0.0f, 0.0f, -0.08f);
+		static Vector InnerRotation = new Vector (0.7f, 0.8f, 0.9f);
+		static Vector OuterRotation = new Vector (-0.7f, -0.8f, -0.9f);
 		
 		static readonly float[,,] innerVerts = new float[4,4,3] {
 			/* normal:  0.0f,  1.0f,  0.0f */
@@ -84,37 +76,31 @@ namespace DemoLib {
 		};
 		
 		enum State {
-			START       = 0,
-			ZOOM_OUT    = 1,
-			ZOOMED_OUT  = 2,
-			ZOOM_IN     = 3,
-			FINISH      = 4,
-			FADE_OUT    = 5,
-			COMPLETE
-		}
-		
-		struct vector_t {
-			public float x;
-			public float y;
-			public float z;
+			Start       = 0,
+			ZoomOut     = 1,
+			ZoomedOut   = 2,
+			ZoomIn      = 3,
+			Finish      = 4,
+			FadeOut     = 5,
+			Complete
 		}
 		
 		State state;
 		int nFrames;
 		
-		vector_t innerCage;
+		Vertex innerCage;
 		int innerCageId;
 		
-		vector_t outerCage;
+		Vertex outerCage;
 		int outerCageId;
 		
-		vector_t camera;
+		Vertex camera;
 		
 		// Constructors
 		public FloatingCageScene () : base () {
-			//camera = new Vertex ();
-			//innerCage = new Vertex ();
-			//outerCage = new Vertex ();
+			innerCage = new Vertex ();
+			outerCage = new Vertex ();
+			camera = new Vertex ();
 		}
 		
 		// Private initialization
@@ -252,7 +238,7 @@ namespace DemoLib {
 		}
 		
 		public override bool Complete {
-			get { return state >= State.COMPLETE; }
+			get { return state >= State.Complete; }
 		}
 		
 		// Interface Methods
@@ -272,7 +258,7 @@ namespace DemoLib {
 			
 			Gl.glHint (Gl.GL_PERSPECTIVE_CORRECTION_HINT, Gl.GL_NICEST);
 			
-			state = State.START;
+			state = State.Start;
 			nFrames = 0;
 			
 			innerCage.x = 0.0f;
@@ -304,25 +290,16 @@ namespace DemoLib {
 		public override bool AdvanceFrame () {
 			bool zoom = false;
 			
-			innerCage.x += INNER_ROT_X;
-			innerCage.y += INNER_ROT_Y;
-			innerCage.z += INNER_ROT_Z;
+			innerCage += InnerRotation;
+			outerCage += OuterRotation;
 			
-			outerCage.x += OUTER_ROT_X;
-			outerCage.y += OUTER_ROT_Y;
-			outerCage.z += OUTER_ROT_Z;
-			
-			if (state == State.ZOOM_IN) {
-				camera.x -= CAMERA_ZOOM_SPEED_X;
-				camera.y -= CAMERA_ZOOM_SPEED_Y;
-				camera.z -= CAMERA_ZOOM_SPEED_Z;
+			if (state == State.ZoomIn) {
+				camera -= CameraZoom;
 				zoom = true;
-			} else if (state == State.ZOOM_OUT) {
-				camera.x += CAMERA_ZOOM_SPEED_X;
-				camera.y += CAMERA_ZOOM_SPEED_Y;
-				camera.z += CAMERA_ZOOM_SPEED_Z;
+			} else if (state == State.ZoomOut) {
+				camera += CameraZoom;
 				zoom = true;
-			} else if (state == State.FADE_OUT) {
+			} else if (state == State.FadeOut) {
 				// this is a short-lived state as well
 				zoom = true;
 			}
@@ -333,16 +310,13 @@ namespace DemoLib {
 			} else
 				nFrames++;
 			
-			return state != State.COMPLETE;
+			return state != State.Complete;
 		}
 		
 		public override void RenderFrame () {
 			byte[] fade = new byte [4] { 0, 0, 0, 0 };
 			
 			Gl.glClear (Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);
-			
-			if (state == State.COMPLETE)
-				return;
 			
 			Gl.glPolygonMode (Gl.GL_FRONT_AND_BACK, Gl.GL_FILL);
 			
@@ -366,7 +340,7 @@ namespace DemoLib {
 			Gl.glCallList (outerCageId);
 			Gl.glPopMatrix ();
 			
-			if (state == State.START && nFrames < 128) {
+			if (state == State.Start && nFrames < 128) {
 				Gl.glEnable (Gl.GL_BLEND);
 				Gl.glBlendFunc (Gl.GL_SRC_ALPHA, Gl.GL_ONE_MINUS_SRC_ALPHA);
 				
@@ -388,7 +362,7 @@ namespace DemoLib {
 				
 				Gl.glEnable (Gl.GL_DEPTH_TEST);
 				Gl.glDepthFunc (Gl.GL_LEQUAL);
-			} else if (state == State.FADE_OUT) {
+			} else if (state == State.FadeOut) {
 				Gl.glEnable (Gl.GL_BLEND);
 				Gl.glBlendFunc (Gl.GL_SRC_ALPHA, Gl.GL_ONE_MINUS_SRC_ALPHA);
 				

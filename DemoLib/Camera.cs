@@ -141,12 +141,12 @@ namespace DemoLib {
 			Zoom (amount.z);
 		}
 		
-		// Move the camera to a specific position
+		// Move the camera to a specific position, keeping its orientation
 		public void MoveTo (Vertex point) {
 			position = point;
 		}
 		
-		// Move the camera to a specific position
+		// Move the camera to a specific position, keeping its orientation
 		public void MoveTo (float x, float y, float z) {
 			position = new Vertex (x, y, z);
 		}
@@ -181,17 +181,17 @@ namespace DemoLib {
 			up.Normalize ();
 		}
 		
-		// Change the elevation of the camera
+		// Change the elevation of the camera, relative to the camera's orientation
 		public void Elevate (float amount) {
 			position += (up * amount);
 		}
 		
-		// Strafe the camera left or right
+		// Strafe the camera left or right, relative to the camera's orientation
 		public void Strafe (float amount) {
 			position += (right * amount);
 		}
 		
-		// Zoom camera in or out
+		// Zoom the camera in or out, relative to the camera's orientation (obviously)
 		public void Zoom (float amount) {
 			position += (viewdir * amount);
 		}
